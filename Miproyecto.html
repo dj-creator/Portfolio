@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="./logo2.PNG" type="image/png">
+<title>Djs Portfolio</title>
+
+<head>
+
+</head>
+<style>
+    body {
+        scroll-behavior: smooth;
+        margin: 0;
+        font-family: "Titillium Web", sans-serif;
+        padding: 0;
+        width: 100%;
+        height: fit-content;
+        overflow-x: hidden;
+        padding: 20px;
+        background: linear-gradient(#C2D6EA, #364E66);
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        text-shadow: 1px 3px 5px black;
+    }
+
+    a {
+        align-items: center;
+        appearance: none;
+        background-color: #fcfcfd;
+        border-radius: 4px;
+        border-width: 0;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono", monospace;
+        height: 48px;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow 0.15s, transform 0.15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow, transform;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    a:focus {
+        box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    }
+
+    a:hover {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, red 0 -3px 0 inset;
+        transform: translateY(-2px);
+    }
+
+    a:active {
+        box-shadow: #d6d6e7 0 3px 7px inset;
+        transform: translateY(2px);
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #click {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #zone1 {
+        height: 40vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    /* Box styling */
+    .API {
+        width: 90%;
+        height: 100%;
+        align-items: center;
+        appearance: none;
+        background-color: #fcfcfd;
+        border-radius: 4px;
+        border-width: 0;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+        box-sizing: border-box;
+        display: inline-flex;
+        font-family: "JetBrains Mono", monospace;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow 0.15s, transform 0.15s;
+        object-fit: cover;
+        will-change: box-shadow, transform;
+        font-size: 18px;
+    }
+
+    .API:focus {
+        box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    }
+
+    .API:hover {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, red 0 -3px 0 inset;
+        transform: translateY(-2px);
+    }
+
+    .API:active {
+        box-shadow: #d6d6e7 0 3px 7px inset;
+        transform: translateY(2px);
+    }
+
+    img {
+        height: 300px;
+        width: 90%;
+        border-radius: 4px;
+        background-color: #fcfcfd;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 6px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+        transition: box-shadow 0.15s, transform 0.15s;
+    }
+
+    img:focus {
+        box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    }
+
+    img:hover {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+            rgba(45, 35, 66, 0.3) 0 7px 13px -3px, 0 -3px 0 inset;
+        transform: translateY(-2px);
+    }
+
+    img:active {
+        box-shadow: #d6d6e7 0 3px 7px inset;
+        transform: translateY(2px);
+    }
+
+    .nav {
+        width: 100%;
+        height: fit-content;
+        padding: 2vh;
+        background-color: transparent;
+    }
+
+   
+</style>
+
+<body>
+    <div id="scroll"></div>
+    <div class="nav">
+        <a href="./myProject.html">English</a>
+    </div>
+    <div id="scroll"></div>
+    <h1>Mis Proyectos Principales</h1>
+    <div id="click">
+        <a href="./index.html">Hogar</a>
+    </div>
+    <div id="zone1">
+        <div class="API">
+            <p>
+                ratArapper.com es un sitio web que utiliza una API (Interfaz de Programación de Aplicaciones) de
+                artistas de hip-hop para proporcionar información sobre ellos. Los usuarios pueden buscar a sus artistas
+                de hip-hop favoritos en el sitio web y acceder a información como su biografía, discografía y otros
+                detalles relevantes. Es un recurso útil para los fanáticos del hip-hop que desean aprender más sobre sus
+                artistas favoritos.
+            </p>
+        </div>
+        <img src="./HD-wallpaper-6ix9ine-shark-6ix9ine-gooba-shark-tekashi.jpeg" alt="snitch" />
+    </div>
+    <div id="zone1">
+        <div class="API">
+            <p>
+                Spooky Doors es un juego que creé utilizando JavaScript y CSS. El juego parece ser basado en decisiones,
+                lo que significa que los jugadores tienen que tomar elecciones que impactarán en el resultado del juego.
+                Además, el juego tiene sustos repentinos, lo cual añade un elemento de sorpresa y horror a la
+                experiencia de juego. Es un juego emocionante que mantiene a los jugadores al filo de sus asientos
+                mientras toman decisiones y tratan de navegar a través de las puertas espeluznantes.
+            </p>
+        </div>
+        <img src="./Doors-03232023.webp" alt="snitch" />
+    </div>
+    <div id="zone1">
+        <div class="API">
+            <p>
+                Cuando creé una calculadora sencilla con JavaScript, me aseguré de incluir un botón claro que borra el
+                cálculo anterior y un botón igual que muestra el resultado de la operación. También diseñé la interfaz
+                de usuario para que fuera simple e intuitiva, con botones para ingresar números y seleccionar
+                operadores. En general, descubrí que hacer una calculadora con JavaScript fue un proyecto divertido y
+                útil que me permitió practicar mis habilidades de programación mientras creaba una herramienta útil para
+                cálculos básicos.
+            </p>
+        </div>
+        <img src="./istockphoto-544462430-612x612.jpg" alt="snitch" />
+    </div>
+    <div id="zone1">
+        <div class="API">
+            <p>
+                Creé este sitio web utilizando Bootstrap y JavaScript para brindarles a los fanáticos de los tenis un
+                lugar para comprar y vender algunos de los calzados más populares en el mercado. SoulSearch.com es
+                básicamente un sitio minorista de zapatos, similar a StockX. Ofrecemos una amplia variedad de tenis de
+                marcas populares como Nike, Adidas y Jordan. Nuestro inventario se actualiza constantemente para
+                asegurarnos de que nuestros clientes tengan acceso a los lanzamientos más recientes y los tenis más
+                buscados.
+            </p>
+        </div>
+        <img src="./Capture.PNG" alt="snitch" />
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="./logo2.PNG" type="image/png">
+<title>Djs Portfolio</title>
+
+<head>
+
+</head>
+<style>
+  body {
+    scroll-behavior: smooth;
+    margin: 0;
+    font-family: "Titillium Web", sans-serif;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+    padding: 20px;
+    background: linear-gradient(#C2D6EA, #364E66);
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 3px 5px black;
+  }
+
+  a {
+    align-items: center;
+    appearance: none;
+    background-color: #fcfcfd;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  a:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  }
+
+  a:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, red 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+
+  a:active {
+    box-shadow: #d6d6e7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  #click {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #zone1 {
+    height: 40vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-top: 5%;
+  }
+
+  /* Box styling */
+  .API {
+    width: 90%;
+    height: 100%;
+    align-items: center;
+    appearance: none;
+    background-color: #fcfcfd;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    box-sizing: border-box;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    object-fit: cover;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+  }
+
+  .API:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  }
+
+  .API:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, red 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+
+  .API:active {
+    box-shadow: #d6d6e7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  img {
+    height: 300px;
+    width: 90%;
+    border-radius: 4px;
+    background-color: #fcfcfd;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 6px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+
+  img:focus {
+    box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  }
+
+  img:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+      rgba(45, 35, 66, 0.3) 0 7px 13px -3px, 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+
+  img:active {
+    box-shadow: #d6d6e7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  .nav {
+    width: 100%;
+    height: fit-content;
+    padding: 2vh;
+    background-color: transparent;
+  }
+
+
+</style>
+
+<body>
+  <div id="scroll"></div>
+  <div class="nav">
+    <a href="./Miproyecto.html">Español</a>
+  </div>
+  <div id="scroll"></div>
+  <h1>My Main Projects Projects</h1>
+  <div id="click">
+    <a href="./index.html">Home</a>
+  </div>
+  <div id="zone1">
+    <div class="API">
+      <p>
+        ratArapper.com is a website that uses an API (Application Programming
+        Interface) of hip-hop artists to provide information about them. Users
+        can search for their favorite hip-hop artists on the website and get
+        access to information such as their biography, discography and other
+        relevant details. Its a useful resource for hip-hop fans who want to
+        learn more about their favorite artists.
+      </p>
+    </div>
+    <img src="./HD-wallpaper-6ix9ine-shark-6ix9ine-gooba-shark-tekashi.jpeg" alt="snitch" />
+  </div>
+  <div id="zone1">
+    <div class="API">
+      <p>
+        Spooky Doors is a game that I created using JavaScript and CSS. The
+        game appears to be decision-based, which means players have to make
+        choices that will impact the outcome of the game. Additionally, the
+        game has jump scares, which adds an element of surprise and horror to
+        the gameplay experience. It is an exciting game that keeps players on
+        the edge of their seats as they make decisions and try to navigate
+        through the spooky doors.
+      </p>
+    </div>
+    <img src="./Doors-03232023.webp" alt="snitch" />
+  </div>
+  <div id="zone1">
+    <div class="API">
+      <p>
+        When I created a simple calculator with JavaScript, I made sure to
+        include a clear button that erases the previous calculation and an
+        equal button that displays the result of the operation. I also
+        designed the user interface to be simple and intuitive, with buttons
+        for entering numbers and selecting operators. Overall, I found that
+        making a calculator with JavaScript was a fun and useful project that
+        allowed me to practice my coding skills while creating a helpful tool
+        for basic calculations.
+      </p>
+    </div>
+    <img src="./istockphoto-544462430-612x612.jpg" alt="snitch" />
+  </div>
+  <div id="zone1">
+    <div class="API">
+      <p>
+        I created this website using Bootstrap and JavaScript to provide
+        sneakerheads with a place to buy and sell some of the hottest shoes on
+        the market. SoulSearch.com is essentially a shoe retailer site, much
+        like StockX. We offer a wide variety of sneakers from popular brands
+        such as Nike, Adidas, and Jordan. Our inventory is constantly updated
+        to ensure that our customers have access to the latest releases and
+        most sought-after shoes.
+      </p>
+    </div>
+    <img src="./Capture.PNG" alt="snitch" />
+  </div>
+
+</body>
+
+</html>
